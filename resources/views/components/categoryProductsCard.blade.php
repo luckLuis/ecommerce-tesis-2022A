@@ -1,5 +1,5 @@
 <div class="h-auto">
-    <div class="container-sm border border-2 bg-white my-5 px-4">
+    <div class="container-sm border border-2 bg-white my-5 px-4 shadow p-3 mb-5">
         <div class="row">
             <div class="col my-2">
 
@@ -33,7 +33,13 @@
 
                         <!-- Submit button -->
                         <div class="container-fuild text-center">
-                            <button type="submit" class="btn btn-dark btn-block btn-block mb-4">COMPRAR</button>
+                            <a type="button" href="/shoppingCart"
+                                class="btn btn-dark btn-block btn-block mb-4">COMPRAR</a>
+                        </div>
+
+                        <div class="container-fuild text-center">
+                            <button type="submit" class="btn btn-dark btn-block btn-block mb-4">Agregar al
+                                carrito</button>
                         </div>
 
 
@@ -45,7 +51,7 @@
         </div>
     </div>
 </div>
-</div>
+
 <style>
 .form-check .form-check-input {
     width: 80px;
@@ -55,18 +61,15 @@
 }
 
 .letters_car_title {
-    font-family: 'Roboto';
     font-size: 19px;
     font-weight: bold;
 }
 
 .letters_car_botton {
-    font-family: 'Roboto';
     font-size: 19px;
 }
 
 .letters_car_description {
-    font-family: 'Roboto';
     font-size: 15px;
 }
 
@@ -76,7 +79,6 @@
 }
 
 .by {
-    font-family: 'Roboto';
     font-size: 14px;
     font-style: oblique;
 }

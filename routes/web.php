@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Profile\PasswordController;
+use App\Http\Controllers\Profile\ProfileInformationController;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,33 +16,46 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
+Route::middleware(['auth', 'verified'])->group(function ()
+{
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('home');
+    return view('welcome');
+})->name('home');
+
 
 
 Route::get('/sell', function () {
     return view('logged.sell');
-})->middleware(['auth'])->name('sell');
+})->name('sell');
 
 Route::get('/shoppingCart', function () {
     return view('logged.shoppingCart');
-})->middleware(['auth'])->name('shoppingCart');
+})->name('shoppingCart');
 
 Route::get('/myPublications', function () {
     return view('logged.myPublications');
-})->middleware(['auth'])->name('myPublications');
+})->name('myPublications');
+
+Route::get('/profile', [ProfileInformationController::class, 'edit'])->name('profile');
+Route::put('/profile', [ProfileInformationController::class, 'update'])->name('profile.update');
+Route::put('/password', [PasswordController::class, 'update'])->name('user-password.update');
+
+});
 
 
-Route::get('/profile', function () {
-    return view('profile.profile');
-})->middleware(['auth'])->name('profile');
+Route::get('/women/categoryProducts', function () {
+    return view('categoryProducts');
+})->name('categoryProducts');
 
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/usuarios', [UsersController::class, 'index'])->name('users');
+
 
 require __DIR__.'/auth.php';

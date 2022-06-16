@@ -1,15 +1,17 @@
-@extends('master')
+@extends('dashboard')
 @section('content')
 <div class="container-fluid">
-    <h1 class="mb-4 my-4 mx-4">Mi carrito de compras</h1>
+    <h1 class="mb-4 my-4">Mi carrito de compras</h1>
 </div>
+
+<hr>
 
 <div class="h-auto">
 
-    <div class="container-sm border border-2 bg-white my-5 px-4">
+    <div class="container-sm decorate1">
         <div class="row">
             <div class="col my-2">
-                <x-detail>
+                @for ($i = 0; $i < 5; $i++) <x-detail>
                     <x-slot name="productImage">
                         https://frutocuatro.com/wp-content/uploads/2018/05/camiseta-64000-royal-frente.jpg
                     </x-slot>
@@ -22,37 +24,9 @@
                     <x-slot name="description">
                         Camiseta XL con bordes rojos y diseno en el centro
                     </x-slot>
-                </x-detail>
+                    </x-detail>
+                    @endfor
 
-                <x-detail>
-                    <x-slot name="productImage">
-                        https://frutocuatro.com/wp-content/uploads/2018/05/camiseta-64000-royal-frente.jpg
-                    </x-slot>
-                    <x-slot name="title">
-                        Camiseta
-                    </x-slot>
-                    <x-slot name="price">
-                        19.99
-                    </x-slot>
-                    <x-slot name="description">
-                        Camiseta XL con bordes rojos y diseno en el centro
-                    </x-slot>
-                </x-detail>
-
-                <x-detail>
-                    <x-slot name="productImage">
-                        https://frutocuatro.com/wp-content/uploads/2018/05/camiseta-64000-royal-frente.jpg
-                    </x-slot>
-                    <x-slot name="title">
-                        Camiseta
-                    </x-slot>
-                    <x-slot name="price">
-                        19.99
-                    </x-slot>
-                    <x-slot name="description">
-                        Camiseta XL con bordes rojos y diseno en el centro
-                    </x-slot>
-                </x-detail>
 
             </div>
 
@@ -69,7 +43,7 @@
                     </button>
                 </div>
 
-                <!-- Modal -->
+                <!-- Modal tramitar-->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
@@ -88,14 +62,10 @@
                                     </p>
                                 </div>
                                 <div class="container-fluid text-center">
-                                    <button type="button" class="btn btn-success btn-block my-4 letters_car_botton"
+                                    <button class="btn btn-success btn-block my-4 letters_car_botton"
                                         data-bs-dismiss="modal">Ok, entendido</button>
                                 </div>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
@@ -108,18 +78,25 @@
 @endsection
 <style>
 .letters_car_title {
-    font-family: 'Roboto';
     font-size: 19px;
     font-weight: bold;
 }
 
 .letters_car_botton {
-    font-family: 'Roboto';
     font-size: 19px;
 }
 
 .letters_car_description {
-    font-family: 'Roboto';
     font-size: 15px;
+}
+
+.decorate1 {
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    background: #ffffff;
 }
 </style>

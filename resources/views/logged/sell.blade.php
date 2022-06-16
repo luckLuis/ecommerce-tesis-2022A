@@ -1,8 +1,8 @@
-@extends('master')
+@extends('dashboard')
 @section('content')
 <div class="bg-white">
     <div class="container-fluid">
-        <h1 class="mb-4 my-4 mx-4">Nueva publicación</h1>
+        <h1 class="mb-4 my-4">Nueva publicación</h1>
     </div>
 
 

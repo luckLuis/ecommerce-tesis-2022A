@@ -1,4 +1,4 @@
-<div class="container-fluid border my-4">
+<div class="container-fluid border decorate">
     <div class="row my-3">
         <div class="col">
 
@@ -46,5 +46,15 @@
     height: 80px;
     margin-left: 20%;
     margin-top: 50%;
+}
+
+.decorate {
+    border-radius: 25px;
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    background: #E3E3E3;
 }
 </style>

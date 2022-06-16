@@ -1,18 +1,7 @@
-@extends('master')
+@extends('dashboard')
 @section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-
-<body>
+<div>
     <x-category>
         <x-slot name="category">
             Mujeres
@@ -21,11 +10,9 @@
             Blusas
         </x-slot>
     </x-category>
+
     <div class="container mt-4">
-
-
-
-        <x-categoryProductsCard>
+        @for ($i = 0; $i < 4; $i++) <x-categoryProductsCard>
             <x-slot name="productImage">
                 https://m.media-amazon.com/images/I/61FuyZBddHL._AC_UX342_.jpg
             </x-slot>
@@ -47,10 +34,11 @@
             <x-slot name="cantidad">
                 2
             </x-slot>
-        </x-categoryProductsCard>
+            </x-categoryProductsCard>
+            @endfor
     </div>
-</body>
+</div>
 
-</html>
+
 
 @endsection

@@ -1,38 +1,65 @@
-@extends('master')
-@section('content')
-<div class="contair-fuild ">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner mx-auto">
-            <div class="carousel-item active">
-                <img src="https://static2.abc.es/media/antropia/2022/03/11/AdobeStock_266181289-Rt0tjGI8jBU2mTvQi4kOx3J-620x349.jpg"
-                    class="d-block " alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.ambientum.com/wp-content/uploads/2019/02/ropa-696x468.jpg" class="d-block "
-                    alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://www.anahuac.mx/mexico/sites/default/files/noticias/Los-colores-que-utilizamos-en-la-ropa-dicen-como-somos.jpg"
-                    class="d-block img-fluid" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-
-@endsection
+<!DOCTYPE html>
+<html lang="en">
 
 <style>
-.img-tam {
-    height: 70% !important;
+.bg-main {
+    background: #D4D2D2;
+    font-family: 'Roboto';
+
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows:
+        auto 1fr auto;
+}
+
+.bg-boddy {
+    background: #F4F0F0;
 }
 </style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon"
+        href="https://cdn.icon-icons.com/icons2/1949/PNG/512/free-30-instagram-stories-icons40_122587.png">
+    <title>EcoModa</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+
+</head>
+
+
+<body class="bg-main">
+    {{View::make('header')}}
+    <div class="container">
+
+        <div class="shadow p-5 bg-white">
+            @yield('content')
+        </div>
+
+    </div>
+    {{View::make('footer')}}
+</body>
+
+
+</html>
