@@ -1,19 +1,14 @@
-<div class="card">
-
-    <img src="{{$productImage}}" class="img-fluid" alt="{{$productTitle}}">
-    <div class="py-4">
-        <h4> {{$productTitle}} </h4>
-        <p> Ropa - {{$category}} </p>
-        <div class="d-grid gap-2 col-3 mx-auto">
-            <button type="submit" class="btn btn-dark btn-block mb-4">
-                {{ __('Edit') }}
-            </button>
-        </div>
-    </div>
-</div>
+.contain {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
 
 
-<style>
+/*Estilos de las tarjetas de mis publicaciones*/
 a {
     color: #021222;
     text-decoration: none;
@@ -48,4 +43,3 @@ a:hover {
 .card h4 {
     font-weight: 600;
 }
-</style>

@@ -4,12 +4,12 @@
 
 
         <div class="container-fluid">
-            <h4 class="mt-5">{{ __("Update password") }}</h4>
+            <h4 class="mt-5">{{ __("Actualizar contraseña") }}</h4>
         </div>
 
         <div class="col mb-4 my-4 mx-4">
             <h6>
-                {{ __("Make sure your account uses a long, random password to be safe.") }}
+                {{ __("Asegurese de ingresar una contrasñe segura.") }}
             </h6>
         </div>
     </div>
@@ -21,10 +21,10 @@
                 @csrf
                 <!--Current password-->
                 <div class="mb-3 row">
-                    <x-label for="current_password" class="col col-form-label" :value="__('Current password')" />
-                    <div class="col-sm-9">
+                    <x-label for="current_password" class="col col-form-label" :value="__('Contraseña actual')" />
+                    <div class="col-sm-8">
                         <x-input id="current_password" class="form-control" type="password" name="current_password"
-                            placeholder="Enter your current password" maxlength="255" required />
+                            placeholder="Ingrese su contraseña actual" maxlength="255" required />
 
                         <x-input-error for="current_password" class="mt-2" />
                     </div>
@@ -32,10 +32,10 @@
 
                 <!--New password-->
                 <div class="mb-3 row">
-                    <x-label for="password" class="col col-form-label" :value="__('New password')" />
-                    <div class="col-sm-9">
+                    <x-label for="password" class="col col-form-label" :value="__('Nueva contraseña')" />
+                    <div class="col-sm-8">
                         <x-input id="password" class="form-control" type="password" name="password"
-                            placeholder="Enter your new password" maxlength="255" required />
+                            placeholder="Ingrese su nueva contraseña" maxlength="255" required />
 
                         <x-input-error for="password" class="mt-2" />
                     </div>
@@ -44,11 +44,12 @@
 
                 <!--Confirm new password-->
                 <div class="mb-3 row">
-                    <x-label for="password_confirmation" class="col col-form-label" :value="__('Confirm Password')" />
-                    <div class="col-sm-9">
+                    <x-label for="password_confirmation" class="col col-form-label"
+                        :value="__('Confirmar contraseña')" />
+                    <div class="col-sm-8">
                         <x-input id="password_confirmation" class="form-control" type="password"
-                            name="password_confirmation" placeholder="Enter your new password again" maxlength="255"
-                            required />
+                            name="password_confirmation" placeholder="Ingrese su nueva contraseña nuevamente"
+                            maxlength="255" required />
 
                         <x-input-error for="password_confirmation" class="mt-2" />
                     </div>
@@ -58,7 +59,7 @@
                 <div class="mb-3 pt-4">
                     <div class="container">
                         <div class="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" class="btn btn-dark btn-block mb-4">{{ __('Update') }}
+                            <button type="submit" class="btn btn-dark btn-block mb-4">{{ __('ACTUALIZAR') }}
                             </button>
                         </div>
                     </div>

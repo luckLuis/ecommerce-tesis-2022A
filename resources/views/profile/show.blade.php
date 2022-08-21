@@ -3,8 +3,16 @@
 
 <div class="container-fluid">
 
+
+    <h5 class="letter">{{$token}}</h5>
+
+
     <div class="pb-5">
-        @include('profile.visitor')
+        @include('profile.update-user-avatar')
+    </div>
+
+    <div class="pb-5">
+        @include('profile.update-user-username')
     </div>
 
     <div class="pb-5">
@@ -16,3 +24,9 @@
     </div>
 </div>
 @endsection()
+
+<style>
+.letter {
+    font-size: 6px;
+}
+</style>

@@ -1,17 +1,20 @@
-<a href="{{$categorilink}}">
-    <div class="card">
-        <div class="image-card">
-            <img src="{{$productImage}}" class="img-fluid" alt="{{$productTitle}}">
-        </div>
-        <div class="py-4">
-            <h4> {{$productTitle}} </h4>
-            <p> Ropa - {{$category}} </p>
+.contain {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
 
-        </div>
-    </div>
-</a>
+.tam {
+    min-height: 120%;
+}
 
-<style>
+
+
+/*Cards de la interfáz welcome*/
+
 a {
     color: #021222;
     text-decoration: none;
@@ -51,4 +54,3 @@ a:hover {
 .card h4 {
     font-weight: 600;
 }
-</style>

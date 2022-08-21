@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\User;
 use Illuminate\Support\Fascades\Hash;
 
 class UserSeeder extends Seeder
@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
     {
         //
 
-        
+        User::factory()->count(5)->create();
 
   
     }

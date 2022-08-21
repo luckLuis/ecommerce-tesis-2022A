@@ -1,0 +1,22 @@
+.letters_car_title {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.letters_car_botton {
+    font-size: 19px;
+}
+
+.letters_car_description {
+    font-size: 15px;
+}
+
+.decorate1 {
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    background: #ffffff;
+}

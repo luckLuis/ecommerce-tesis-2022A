@@ -1,0 +1,33 @@
+.form-check .form-check-input {
+    width: 80px;
+    height: 80px;
+    margin-left: 20%;
+    margin-top: 50%;
+}
+
+.letters_car_title {
+    font-family: 'Roboto';
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.letters_car_botton {
+    font-family: 'Roboto';
+    font-size: 19px;
+}
+
+.letters_car_description {
+    font-family: 'Roboto';
+    font-size: 15px;
+}
+
+.img_tam {
+    width: 50%;
+    max-height: 100%;
+}
+
+.by {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: oblique;
+}

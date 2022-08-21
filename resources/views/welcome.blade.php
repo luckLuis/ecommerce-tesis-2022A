@@ -1,24 +1,15 @@
-<?php
-$images = [
-    "https://phantom-elmundo.unidadeditorial.es/506d8bca935c39cfc3aea25c1402899f/resize/990/f/webp/assets/multimedia/imagenes/2021/07/30/16276615277173.jpg",
-    "https://img.freepik.com/foto-gratis/retrato-guapo-sonriente-elegante-joven-modelo-vestido-ropa-jeans-hombre-moda_158538-5030.jpg?t=st=1655202054~exp=1655202654~hmac=ebd9ed31d5582772fa7609df89579e717ce533a8c676242479ddab240175dbc6&w=826",
-    "https://i.pinimg.com/564x/a2/90/71/a29071f29907fb67ed5c7a397f98e9a9.jpg",
-    "https://i.pinimg.com/564x/cf/30/0c/cf300c49bb7cb5e9e262741f62001432.jpg"
-];
-
-$categories = [
-"Mujer", "Hombre", "Niño", "Niña"
-];
-?>
 @extends('dashboard')
 @section('content')
+
+<link href="{{asset('css/welcome.css')}}" rel="stylesheet">
+<link href="{{asset('css/myPublications.css')}}" rel="stylesheet">
 
 <div class="container-fluid">
 
 
     <div class="container-fluid d-flex flex-row">
         <h1>
-            {{ __('Welcome') }}
+            {{ __('Bienvenid@') }}
         </h1>
         @if (Route::has('login'))
         @auth
@@ -72,48 +63,30 @@ $categories = [
 
     <div class="container-fluid d-flex flex-column bd-highlight mb-3">
 
-
         <div class="contain tam">
-            @foreach ($images as $image) <x-cardProductsW>
+            @foreach ($categoriesArray as $categories)
 
-                <x-slot name="categorilink">
-                    /women/categoryProducts
-                </x-slot>
 
-                <x-slot name="productImage">
-                    {{$image}}
-                </x-slot>
-                <x-slot name="productTitle">
-                    Ropa - Mujer
-                </x-slot>
-                <x-slot name="category">
-                    MUJER
-                </x-slot>
-            </x-cardProductsW>
+            <a href="{{route ('products', $categories['id'])}}">
+                <div class="card">
+                    <div class="image-card">
+                        <img src="https://media.glamour.mx/photos/6190c4daf5ed039ceea8d850/master/pass/156462.jpg"
+                            class="img-fluid" alt="{{$categories['name']}}">
+                    </div>
+                    <div class="py-4">
+                        <h4> Ropa </h4>
+                        <p> {{$categories['name']}} </p>
+
+                    </div>
+                </div>
+            </a>
+
 
             @endforeach
 
 
-
         </div>
-
     </div>
 </div>
 
-
-
 @endsection
-<style>
-.contain {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: auto;
-}
-
-.tam {
-    min-height: 120%;
-}
-</style>

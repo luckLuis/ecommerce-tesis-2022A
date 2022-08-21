@@ -1,0 +1,52 @@
+.header_title {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #021222;
+}
+
+.letters_header {
+    color: #ffffff;
+}
+
+.letters_header:hover {
+    color: #169BA4;
+}
+
+/*.letters_submenu {}*/
+
+.letters_submenu:hover {
+    color: #D8D8D8;
+    font-weight: bold;
+}
+
+.header_submenu {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #169BA4;
+}
+
+.color {
+    background: #CBCBCB;
+}
+
+
+.a1::hover {
+        color: #ffffff;  
+}
+
+
+/*Modo oscuro*/
+
+/*.dark-mode-button {}*/
+
+html.dark-mode {
+    filter: invert(100%)
+}
+
+html.dark-mode img {
+    filter: invert(100%)
+}
+
+html.dark-mode nav {
+    filter: invert(100%)
+}

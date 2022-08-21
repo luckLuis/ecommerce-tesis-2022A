@@ -1,51 +1,44 @@
-<div class="container-fluid border decorate">
-    <div class="row my-3">
-        <div class="col">
+<div class="h-auto">
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            </div>
-        </div>
-        <div class="col">
-            <img src="{{$productImage}}" class="img-fluid py-2" alt="Responsive image">
-        </div>
-        <div class="col">
+    <div class="container-sm border border-2 bg-white my-5 px-4 shadow p-3 mb-5">
+        <div class="row">
+            <div class="col my-2">
 
-            <div class="col">
-                <p class="letters_car_title text-center">
-                    {{$title}}
-                </p>
-            </div>
-            <div class="col">
-                <p class="letters_car_description text-center">
-                    $ {{$price}}
-                </p>
-            </div>
+                <div class="row my-3">
 
-        </div>
-        <div class="col">
-            <p class="letters_car_description">
-                {{$description}}
-            </p>
-        </div>
-        <div class="col">
-            <select class="form-select letters_car_description" aria-label="Default select example">
-                <option selected>Cantidad...</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
+                    <div class="col-3 text-center">
+                        <img src="{{$productImage}}" class="img-fluid py-2 img_tam" alt="">
+                    </div>
+                    <div class="col">
+
+                        <p class="letters_car_title">
+                            {{$title}}
+                        </p>
+
+                        <p class="letters_car_description">
+                            {{$description}}
+                        </p>
+
+                    </div>
+                    <div class="col-3  text-center">
+                        <p class="letters_car_title">
+                            $ {{$price}}
+                        </p>
+                        <div class="delete">
+                            <i class="bi bi-trash"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 
+
 <style>
-.form-check .form-check-input {
-    width: 80px;
-    height: 80px;
-    margin-left: 20%;
-    margin-top: 50%;
+.delete i {
+    font-size: 45px;
+    color: red;
 }
 
 .decorate {

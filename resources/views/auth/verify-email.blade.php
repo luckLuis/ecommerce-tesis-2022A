@@ -3,22 +3,16 @@
 
 <div class="bg-white">
     <div class="container-fluid mt-4">
-        <h1 class="mb-4 my-4">{{ __('Verify Email') }}</h1>
+        <h1 class="mb-4 my-4">{{ __('Verificar correo electrónico') }}</h1>
     </div>
 
     <div class="container py-5">
 
 
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
         <div class="mb-3">
             <div class="container">
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+                    {{ __('Gracias por registrarte! Antes de comenzar, ¿podría verificar su dirección de correo electrónico haciendo clic en el enlace que le acabamos de enviar? Si no recibiste el correo electrónico, con gusto te enviaremos otro.') }}
                 </div>
             </div>
         </div>
@@ -27,7 +21,7 @@
         <div class="mb-3">
             <div class="container">
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+                    {{ __('Se ha enviado un nuevo enlace de verificación a la dirección de correo electrónico que proporcionó durante el registro.') }}
                 </div>
             </div>
         </div>
@@ -42,7 +36,7 @@
                     <div class="container">
                         <div class="d-grid gap-2 mx-auto">
                             <button type="submit" class="btn btn-success btn-block mb-4">
-                                {{ __('Resend Verification Email') }}
+                                {{ __('REENVIAR CORREO ELECTRÓNICO DE VERIFICACIÓN') }}
                             </button>
                         </div>
 
@@ -55,7 +49,7 @@
                     <div class="container">
                         <div class="d-grid gap-2 mx-auto">
                             <button type="submit" class="btn btn-dark btn-block mb-4">
-                                {{ __('Log Out') }}
+                                {{ __('CERRAR SESIÓN') }}
                             </button>
                         </div>
                     </div>

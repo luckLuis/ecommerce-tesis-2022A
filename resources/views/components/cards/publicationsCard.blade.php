@@ -1,5 +1,7 @@
 <div class="h-auto">
+
     <div class="container-sm border border-2 bg-white my-5 px-4 shadow p-3 mb-5">
+
         <div class="row">
             <div class="col my-2">
 
@@ -15,44 +17,53 @@
                         </p>
 
                         <p class="letters_car_description by">
-                            by {{$seller}}
+                            <b>Vendedor:</b>
+
+                            {{$seller}}
+
                         </p>
 
                         <p class="letters_car_description">
                             {{$description}}
                         </p>
 
+                        <div class="letters_car_description">
+                            {{$tags}}
+                        </div>
+
                     </div>
-                    <div class="col-4 my-5 text-center">
+                    <div class="col-4  text-center">
                         <p class="letters_car_title">
                             $ {{$price}}
                         </p>
-                        <p class="letters_car_description">
-                            {{$cantidad}}
-                        </p>
 
-                        <!-- Submit button -->
-                        <div class="container-fuild text-center">
-                            <a type="button" href="/shoppingCart"
-                                class="btn btn-dark btn-block btn-block mb-4">COMPRAR</a>
+
+
+                        <div class="my-5 aux">
+
+                            <!-- Edit - ocultar -->
+                            <div class="container-fuild text-center">
+                                <a type="button" class="btn btn-dark btn-block btn-block mb-4">
+                                    <i class="bi bi-eye-slash px-1"></i>OCULTAR
+                                </a>
+                                <a type="button" href="/product/edit" class="btn btn-dark btn-block btn-block mb-4">
+                                    <i class="bi bi-pencil px-1"></i>EDITAR
+                                </a>
+                            </div>
                         </div>
-
-                        <div class="container-fuild text-center">
-                            <button type="submit" class="btn btn-dark btn-block btn-block mb-4">Agregar al
-                                carrito</button>
-                        </div>
-
-
                     </div>
-
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 
+
 <style>
+.aux {
+    padding-top: 40px;
+}
+
 .form-check .form-check-input {
     width: 80px;
     height: 80px;

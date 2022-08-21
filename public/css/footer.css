@@ -1,0 +1,18 @@
+.footer_title {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.letters_footer {
+    color: #000000;
+    font-size: 14px;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.border-top {
+    border-top-color: #169BA4 !important;
+}

@@ -3,7 +3,9 @@
 
 
 <div class="container-fluid">
-    <h1 class="mb-4 my-4">Contáctanos</h1>
+    <h1 class="mb-4 my-4">
+        {{ __('Contact us') }}
+    </h1>
 </div>
 
 
@@ -11,12 +13,11 @@
     <div class="row">
         <div class="col mb-4 my-4 mx-4">
             <h4>
-                ¿Cómo te podemos ayudar?
+                {{ __('¿Cómo podemos ayudar?') }}
             </h4>
 
             <h6 class="py-4">
-                Completa el siguiente formulario y un representante de Servicio al Cliente te responderá lo más
-                pronto posible.
+                {{ __('Complete el siguiente formulario y un representante de Servicio al Cliente le responderá a la brevedad..') }}
             </h6>
         </div>
 
@@ -46,7 +47,9 @@
             <div class="mb-3">
                 <div class="container py-4">
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" class="btn btn-dark btn-block mb-4">ENVIAR</button>
+                        <button type="submit" class="btn btn-dark btn-block mb-4">
+                            {{ __('ENVIAR') }}
+                        </button>
                     </div>
                 </div>
             </div>

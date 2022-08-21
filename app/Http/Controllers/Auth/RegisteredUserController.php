@@ -9,6 +9,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
@@ -20,7 +21,11 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        $categories = Http::get('https://ecoshopepn.herokuapp.com/api/category');  
+        $categoriesArray = $categories->json();
+
+
+        return view('auth.register', compact('categoriesArray'));
     }
 
     /**
@@ -36,10 +41,11 @@ class RegisteredUserController extends Controller
         $request->validate([
             'first_name' => ['required', 'string', 'max:50'],
             'last_name' => ['required', 'string', 'max:50'],
+            'username' => ['required', 'string', 'max:50', 'unique:users'],
             'personal_phone' => ['required', 'string', 'max:10'],
             'home_phone' => ['required', 'string', 'max:9'],
             'address' => ['required', 'string', 'max:50'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],          
             'password' => ['required', 'confirmed', Rules\Password::defaults()]
         ]);
 
@@ -52,6 +58,11 @@ class RegisteredUserController extends Controller
             'address' => $request->address,
             'email' => $request->email,
             'password' => Hash::make($request->password)
+        ]);
+
+
+        $user ->image()->create([
+            'path' => $user->generateAvatarUrl(),
         ]);
 
         event(new Registered($user));

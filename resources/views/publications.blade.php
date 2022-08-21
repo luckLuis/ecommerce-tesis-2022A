@@ -1,5 +1,9 @@
 @extends('master')
 @section('content')
+
+<link href="{{asset('publications.css')}}" rel="stylesheet">
+
+
 <div class="h-auto">
     <div class="container-sm border border-2 bg-white my-5 px-4">
         <div class="row">
@@ -35,10 +39,9 @@
 
                         <!-- Submit button -->
                         <div class="container-fuild text-center">
-                            <button type="submit" class="btn btn-dark btn-block btn-block mb-4">COMPRAR</button>
+                            <button type="submit"
+                                class="btn btn-dark btn-block btn-block mb-4">{{__('COMPRAR')}}</button>
                         </div>
-
-
                     </div>
 
                 </div>
@@ -47,41 +50,5 @@
         </div>
     </div>
 </div>
-</div>
-<style>
-.form-check .form-check-input {
-    width: 80px;
-    height: 80px;
-    margin-left: 20%;
-    margin-top: 50%;
-}
-
-.letters_car_title {
-    font-family: 'Roboto';
-    font-size: 19px;
-    font-weight: bold;
-}
-
-.letters_car_botton {
-    font-family: 'Roboto';
-    font-size: 19px;
-}
-
-.letters_car_description {
-    font-family: 'Roboto';
-    font-size: 15px;
-}
-
-.img_tam {
-    width: 50%;
-    max-height: 100%;
-}
-
-.by {
-    font-family: 'Roboto';
-    font-size: 14px;
-    font-style: oblique;
-}
-</style>
 
 @endsection

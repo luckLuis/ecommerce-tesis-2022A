@@ -10,21 +10,20 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 
-
 // RUTAS PARA EL INICIO DE SESIÓN
 // Invocación de la vista
-Route::get('/login', [AuthenticatedSessionController::class, 'create'])
-    ->middleware('guest')
-    ->name('login');
+//Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+ //   ->middleware('guest')
+ //   ->name('login');
 // Verificación en la base de datos
-Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-    ->middleware('guest');
+//Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+ //   ->middleware('guest');
 
 
 // RUTAS PARA EL CIERRE DE SESIÓN
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout');
+//Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+  //  ->middleware('auth')
+    //->name('logout');
 
 
 // RUTAS PARA EL RESTABLECIMIENTO DE LA CONTRASEÑA Y ENVÍO AL EMAIL
@@ -49,7 +48,7 @@ Route::post('/reset-password', [NewPasswordController::class, 'store'])
     ->middleware('guest')
     ->name('password.update');
 
-
+/*
 // RUTAS PARA EL REGISTRO DEL USUARIO
 // Invocación de la vista
 Route::get('/register', [RegisteredUserController::class, 'create'])
@@ -60,7 +59,7 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest');
 
-
+*/
 // RUTAS PARA CUANDO EL USUARIO SE REGISTRE VERIFIQUE EL EMAIL ENVIADO
 // Verificación del email
 Route::get('/verify-email', [EmailVerificationPromptController::class, '__invoke'])
