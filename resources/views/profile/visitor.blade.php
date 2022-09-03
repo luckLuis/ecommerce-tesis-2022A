@@ -1,39 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
 
-<style>
-.letters {
-    font-family: 'Roboto';
-}
-
-.letters {
-    font-family: 'Roboto';
-}
-
-.img-perfil img {
-    border-radius: 50%;
-    display: block;
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-}
-
-.borde-shadow {
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-.wrapper {
-    overflow-y: auto;
-}
-
-.wrapper .item {
-    min-width: 220px;
-    max-height: 340px;
-    line-height: 220px;
-    text-align: center;
-}
-</style>
-
 <div class="row letters pb-4">
     <div class="row ">
         <div class="col borde-shadow tam">
@@ -54,12 +21,13 @@
                 </div>
                 <div class="py-5 px-5">
 
-                    <h2 class="py-4">
-                        <i class="bi bi-check2-square"></i>
-                        <b>{{$token}}</b>
-                    </h2>
+                    <h5 class="py-4">
+
+                        <b>Nombre de usuario: {{$user['nickname']}}</b>
+
+                    </h5>
                     <h5>
-                        {{__('Ventas completadas')}}
+
                     </h5>
                 </div>
 
@@ -95,7 +63,6 @@
                 </div>
             </div>
 
-
             <!--Progress bar-->
             <div class="row pb-4">
                 <div class="col-3 text-center">
@@ -120,3 +87,36 @@
         </div>
     </div>
 </div>
+
+<style>
+.letters {
+    font-family: 'Roboto';
+}
+
+.letters {
+    font-family: 'Roboto';
+}
+
+.img-perfil img {
+    border-radius: 50%;
+    display: block;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.borde-shadow {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper {
+    overflow-y: auto;
+}
+
+.wrapper .item {
+    min-width: 220px;
+    max-height: 340px;
+    line-height: 220px;
+    text-align: center;
+}
+</style>

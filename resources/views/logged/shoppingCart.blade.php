@@ -10,40 +10,103 @@
 <hr>
 
 <div class="h-auto">
-    @if (true)
+    @if ($bool)
     <div class="container-sm decorate1">
         <div class="row">
             <div class="col my-2">
-                @for ($i=0; $i< 1; $i++) <x-detail>
-                    <x-slot name="productImage">
-                        https://picsum.photos/id/9/200/300
-                    </x-slot>
-                    <x-slot name="title">
-                        {{ __('Magni velit perferendis eligendi ad dolore et est.')}}
-                    </x-slot>
-                    <x-slot name="price">
-                        {{ __('120')}}
-                    </x-slot>
-                    <x-slot name="description">
-                        {{ __('Ipsa occaecati quia adipisci. Ducimus repellendus consectetur et at qui. Perferendis quas qui et. Officia est eos assumenda neque non est reiciendis. Laboriosam aliquam saepe et quia temporibus vero architecto.')}}
-                    </x-slot>
-                    </x-detail>
-                    @endfor
+
+                @foreach ($cartArray as $cart)
+
+                <div class="h-auto">
+
+                    <div class="container-sm border border-2 bg-white my-5 px-4 shadow p-3 mb-5">
+                        <div class="row">
+                            <div class="col my-2">
+
+                                <div class="row my-3">
+
+                                    <div class="col-3 text-center">
+                                        <img src="{{$images[$cart['id']]}}" class="img-fluid py-2 img_tam" alt="">
+                                    </div>
+                                    <div class="col">
+
+                                        <p class="letters_car_title">
+                                            {{$cart['name']}}
+                                        </p>
+
+                                        <p class="letters_car_description">
+                                            {{$cart['details']}}
+                                        </p>
+
+                                    </div>
+                                    <div class="col-2  text-center py-5">
+                                        <p class="letters_car_title">
+                                            $ {{$cart['price']}}
+                                        </p>
+                                    </div>
+
+
+                                    <div class="col-2  text-center">
+                                        <div class="delete py-4">
+
+
+                                            <a type="button" href="{{route('cart.discard', $cart['id'])}}"
+                                                class="btn btn-danger">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z">
+                                                    </path>
+                                                    <path fill-rule="evenodd"
+                                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z">
+                                                    </path>
+                                                </svg>
+                                                Quitar
+                                            </a>
+
+                                        </div>
+                                        <div class="reserve py-4">
+                                            <a type="button" href="{{route('cart.reserve', $cart['id'])}}"
+                                                class="btn btn-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z">
+                                                    </path>
+                                                    <path
+                                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z">
+                                                    </path>
+                                                </svg>
+                                                Reservar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @endforeach
             </div>
 
 
 
 
-            <div class="col-3 my-5">
-                <p class="letters_car_title text-center">{{ __('Subtotal (1 producto): US$120')}}</p>
+            <div class="col-3 my-5 py-5">
+                <p class="letters_car_title text-center">Subtotal ({{$items}} producto/s): $ {{$price}}</p>
+            </div>
 
 
-                <!-- Button trigger modal -->
-                <div class="text-center">
-                    <button type="button" class="btn btn-success btn-block my-4 letters_car_botton"
-                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        {{ __('TRAMITAR EL PAGO')}}
-                    </button>
+            <div class="mb-3">
+                <div class="container">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a type="button" class="btn btn-success btn-block my-4 letters_car_botton"
+                            href="{{route('list.reserve')}}">
+                            {{ __('CONTINUAR A PRODUCTOS RESERVADOS') }}
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -65,51 +128,24 @@
                         </div>
                     </div>
                 </div>
-            </div> @endif
+            </div>
+            <div class="text-center">
+                <p><b>o</b></p>
+            </div>
+            <div class="mb-3">
+                <div class="container">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <a type="button" class="btn btn-success btn-block my-4" href="{{route('list.reserve')}}">
+                            {{ __('CONTINUAR A PRODUCTOS RESERVADOS') }}
+                        </a>
+                    </div>
+                </div>
+            </div>@endif
         </div>
     </div>
 </div>
 
 
-<!-- Modal tramitar-->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <div class="modal-header">
-                <div class="container-fluid text-center py-4">
-                    <h4>
-                        <b>
-                            {{ __('Acuerdas el pago y envío con el vendedor')}}
-                        </b>
-                    </h4>
-                </div>
-            </div>
-
-            <div class="modal-body">
-
-
-                <div class="container-fluid text-center py-4">
-                    <p>
-                        {{ __('Luego de confirmar tu compra tendrás que contactar al vendedor para acordar el
-                        pago y la entrega del producto.')}}
-                    </p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <div class="container-fluid text-center">
-                    <a type="button" class="btn btn-success btn-block my-4 letters_car_botton" href="/sellComplete">
-                        {{ __('Ok, entendido')}}
-                    </a>
-                    <button class="btn btn-danger btn-block my-4 letters_car_botton mx-4"
-                        data-bs-dismiss="modal">{{ __('Cancelar')}}</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 @endsection
@@ -118,5 +154,25 @@
 .img_tam {
     width: 50%;
     max-height: 100%;
+}
+
+.delete i {
+    font-size: 45px;
+    color: red;
+}
+
+.reserve i {
+    font-size: 45px;
+    color: green;
+}
+
+.decorate {
+    border-radius: 25px;
+    box-shadow: 0 10px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    background: #E3E3E3;
 }
 </style>

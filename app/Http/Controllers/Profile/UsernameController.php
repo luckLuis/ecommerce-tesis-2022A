@@ -27,7 +27,7 @@ class UsernameController extends Controller
         
 
 
-        $user = Http::withToken('Bearer 136|ig9FBgdhS7A5oz3inqtynziUvidW55oETH8pGfkG')->get('http://ecoshopepn.herokuapp.com/api/updateUsername?',
+        $user = Http::withToken('Bearer 192|KRtabJ9ZpBJPJ4JvQuhPI1LPuz6JI875Gy88pVu9')->get('http://ecoshopepn.herokuapp.com/api/updateUsername?',
         [
             'username' =>$request->username,
         ]);

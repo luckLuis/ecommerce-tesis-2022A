@@ -43,36 +43,25 @@
                         </h1>
                     </div>
                     <hr />
-                    <div class="row">
-                        <div class="col-8">
-                            Nick: {{$usersArray['user']['nickname']}}
-                        </div>
-                    </div>
+
                 </div>
                 <div class="col">
                     <div class="img-perfil">
-                        <img src="{{$avatar}}">
+                        <img src="{{$avatar}}" alt="name">
                     </div>
                 </div>
                 <div class="py-5 px-5">
 
-                    <h2 class="py-4">
-                        <i class="bi bi-check2-square"></i>
-                        <b>45</b>
-                    </h2>
-                    <h5>
-                        {{__('Ventas completadas')}}
+                    <h5 class="py-4">
+
+                        <b>Nombre de usuario: {{$usersArray['user']['nickname']}}</b>
+
                     </h5>
                 </div>
-
                 <div class=" px-5">
 
-                    <h2 class="py-4">
-                        <i class="bi bi-calendar-week"></i>
-                        <b>3</b>
-                    </h2>
                     <h5>
-                        {{__('Meses vendiendo en EcoModa')}}
+                        <b>Dirección: {{$usersArray['user']['address']}}</b>
                     </h5>
 
                 </div>
@@ -84,7 +73,7 @@
                         <h3 class="mb-4 mx-4 text-end text-wrap">
 
 
-                            {{$usersArray['user']['address']}}
+                            ecoModa
 
 
                         </h3>
@@ -117,15 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="wrapper">
-                <div class="item">
-                    <div class="mx-auto px-5">
-                        @for ($i = 0; $i < 5; $i++)<x-sellCompletes>
-                            </x-sellCompletes>
-                            @endfor
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>

@@ -51,7 +51,7 @@ class LoginController extends Controller
 
         $categoriesArray = $categories->json();
 
-        //return redirect('/', compact('token'));
+       
 
         return view('profile.show', compact('categoriesArray', 'token', 'user'));
     }

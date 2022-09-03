@@ -99,17 +99,18 @@ body {
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="/myPublications">
+                                        <a class="dropdown-item" href="{{route ('notifications')}}">
+                                            <i class="bi bi-bell-fill"></i>
+                                            {{ __('Historial') }}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{route('publications')}}">
                                             <i class="bi bi-basket-fill"> </i>
                                             {{ __('Mis publicaciones') }}
                                         </a>
                                     </li>
-                                    <li>
-                                        <a class="dropdown-item" href="/notifications">
-                                            <i class="bi bi-bell-fill"></i>
-                                            {{ __('Notificaciones') }}
-                                        </a>
-                                    </li>
+
                                     <hr />
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
@@ -175,7 +176,7 @@ body {
                             <li class="nav-item">
                                 <a class="nav-link letters_header" href="/cart">
                                     <i class="bi bi-cart-fill"></i>
-                                    {{ __('CARRITO (1)') }}
+                                    {{ __('CARRITO') }}
                                 </a>
                             </li>
                         </ul>
@@ -233,14 +234,7 @@ body {
                     </ul>
                 </div>
                 <div class="col-md mx-5">
-                    <h5>{{ __('MI CUENTA') }}</h5>
-                    <ul class="nav flex-column letters_footer">
-                        <li class="nav-item mb-2">
-                            <a href="/profile" class="nav-link p-0 text-muted">
-                                {{ __('MI CUENTA') }}
-                            </a>
-                        </li>
-                    </ul>
+
                 </div>
 
                 <div class="col-1 mx-5">

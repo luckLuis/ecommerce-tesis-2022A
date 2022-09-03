@@ -10,6 +10,8 @@ class ProductsController extends Controller
 {
     //
 
+    public string $token = 'Bearer 209|FSUFJNMDxzIeUKwo0L7EkDh59phsS5xtvlowTY7n';
+
     public function index()
     {
         $categories = Http::get('https://ecoshopepn.herokuapp.com/api/category');  
@@ -27,12 +29,9 @@ class ProductsController extends Controller
 
         $slug = str_replace(' ', '-', $request->name);
 
-
-        
-
         //return $request;
 
-        $product = Http::withToken('Bearer 149|nOzp8eUWfuhmDHCwfnmMQIwTwJDnuDvREUTKCVtq')->post('http://ecoshopepn.herokuapp.com/api/myPosts?',[   
+        $product = Http::withToken('Bearer 209|FSUFJNMDxzIeUKwo0L7EkDh59phsS5xtvlowTY7n')->post('http://ecoshopepn.herokuapp.com/api/myPosts?',[   
             'name'=> $request->name,
             'slug'=> $slug,
             'description' => $request->description,
@@ -40,15 +39,51 @@ class ProductsController extends Controller
             'tags'=>$request->tag,
             'details'=>$request->details,
             'price'=>$request->price,
+            
         ]);
+
+
 
         //return $product;
 
+        return back()->with('status', 'Producto creado con éxito!');
+    }
+
+
+    public function show(Request $request)
+    {
         $categories = Http::get('https://ecoshopepn.herokuapp.com/api/category');  
         $categoriesArray = $categories->json();
 
-        return back()->with('status', 'Producto creado con éxito');
+        $edit = Http::withToken($this->token)->get('http://ecoshopepn.herokuapp.com/api/myPosts/'.$request['id']);
 
-        return view('welcome', compact('categoriesArray'));
+        $editArray = $edit->json();
+
+        $tags = Http::get('http://ecoshopepn.herokuapp.com/api/tag');
+        $tagsArray = $tags->json();
+
+
+        return view('logged.editPublication', compact('categoriesArray', 'editArray', 'tagsArray'));
     }
+
+    public function edit(Request $request)
+    {
+        $slug = str_replace(' ', '-', $request->name);
+
+        //return $this->id;
+
+        
+
+        $product = Http::withToken($this->token)->put('http://ecoshopepn.herokuapp.com/api/myPosts/40?',[
+            'name'=> $request->name,
+            'slug'=> $slug,
+            'description' => $request->description,
+            'category_id'=>$request->category_id,
+            'tags'=>$request->tag,
+            'details'=>$request->details,
+            'price'=>$request->price,
+        ]); 
+    }
+
+    
 }

@@ -16,7 +16,7 @@
 
             <div class="col-7 mb-4 mx-4 ">
 
-                <form method="POST" action="{{ route('product.store') }}">
+                <form method="POST" action="{{ route('product.edit') }}">
 
                     @csrf
                     <!-- Name -->
@@ -29,19 +29,6 @@
                                 <input id="name" class="form-control" type="text" name="name"
                                     placeholder="Ingrese el nombre del producto" required />
 
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Slug-->
-                    <div class="mb-3">
-                        <div class="container">
-                            <div class="d-grid gap-2">
-                                <label for="slug">
-                                    {{__('Slug')}}
-                                </label>
-                                <input id="slug" class="form-control" type="text" name="slug"
-                                    placeholder="Enter the Slug" required />
                             </div>
                         </div>
                     </div>
@@ -86,42 +73,6 @@
                     </div>
 
 
-                    <!-- Category -->
-                    <div class="mb-3">
-                        <div class="container">
-                            <div class="d-grid gap-2">
-                                <label for="category">
-                                    {{__('Categoría')}}
-                                </label>
-                                <x-dropdownMenu>
-                                    <x-slot name="NombreItem">Seleccione la categoría</x-slot>
-                                    <x-slot name="Action1">Hombre</x-slot>
-                                    <x-slot name="Action2">Mujer</x-slot>
-                                    <x-slot name="Action3">Niño</x-slot>
-                                </x-dropdownMenu>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Tags -->
-                    <div class="mb-3">
-                        <div class="container">
-                            <div class="d-grid gap-2">
-                                <label for="tags">
-                                    {{__('Tags')}}
-                                </label>
-                                <div class="contain tam">
-                                    @for ($i = 0; $i < 5; $i++) <x-tags>
-
-                                        <x-slot name="tag">Tag {{$i+1}}</x-slot>
-                                        </x-tags>
-
-                                        @endfor
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Image -->
                     <div class="mb-3">
@@ -130,7 +81,7 @@
                                 <label for="image">
                                     {{__('Imagen')}}
                                 </label>
-                                <input id="image" class="block mt-2 w-full" type="file" name="image" required />
+                                <input id="image" class="block mt-2 w-full" type="file" name="image" />
 
                                 <x-input-error for="image" class="mt-2" />
                             </div>

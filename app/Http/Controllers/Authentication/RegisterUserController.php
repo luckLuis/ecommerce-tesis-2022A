@@ -50,8 +50,9 @@ class RegisterUserController extends Controller
         $categories = Http::get('https://ecoshopepn.herokuapp.com/api/category');  
         $categoriesArray = $categories->json();
 
+        return back()->with('status', $user['message']);
 
-        return view('welcome', compact('categoriesArray'));
+        //return view('welcome', compact('categoriesArray'));
     }
 
     public function destroy(Request $request)

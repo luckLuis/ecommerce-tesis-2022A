@@ -37,7 +37,7 @@
                     <div class="col-4">
                         <div class="img-perfil">
 
-                            <img src="" alt="{{$user['name']}}" />
+                            <img src="{{$avatar}}" alt="{{$user['name']}}" />
 
                         </div>
                     </div>

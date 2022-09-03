@@ -18,7 +18,7 @@ class ProfileInformationController extends Controller
     {
 
 
-        $user = Http::post('http://ecoshopepn.herokuapp.com/api/login?login_field=luis@hm.com&password=Y234567p$');
+        $user = Http::post('http://ecoshopepn.herokuapp.com/api/login?login_field=luis@hm.com&password=Y2345678p$');
 
 
         $token = $user['token'];
@@ -33,12 +33,17 @@ class ProfileInformationController extends Controller
 
         $categories = Http::get('https://ecoshopepn.herokuapp.com/api/category');
 
+        $avatar = Http::get('https://ecoshopepn.herokuapp.com/api/showAvatar/17');
+
+
 
         $categoriesArray = $categories->json();
 
         //return redirect('/', compact('token'));
 
-        return view('profile.show', compact('categoriesArray', 'token', 'user'));
+        //return $avatar;
+
+        return view('profile.show', compact('categoriesArray', 'token', 'user', 'avatar'));
     }
 
     public function update(Request $request)
@@ -55,7 +60,7 @@ class ProfileInformationController extends Controller
         ]);
 
 
-        $user = Http::withToken('Bearer 137|inggQIneQI3y8GjHzGigRiBQ7x9ldstshSfZH7wl')->get('http://ecoshopepn.herokuapp.com/api/update?',
+        $user = Http::withToken('Bearer 185|MJjLMVcxy1bPOvA9MaRlm6pFTBsH41jgg40DpNq6')->get('http://ecoshopepn.herokuapp.com/api/update?',
         [
             'first_name'=>'Luis',
             'last_name'=>'Jacome',

@@ -30,7 +30,7 @@ class PasswordController extends Controller
             ],
         ]);
 
-        $password = Http::withToken('106|mkVeYOaqqdyIgIGICICyGvsvAyptVo00t4CdiySz')->get('http://ecoshopepn.herokuapp.com/api/password?',[
+        $password = Http::withToken('192|KRtabJ9ZpBJPJ4JvQuhPI1LPuz6JI875Gy88pVu9')->get('http://ecoshopepn.herokuapp.com/api/password?',[
             'current_password'=> $request -> current_password,
             'password' => $request->password,
             'password_confirmation' => $request->password_confirmation

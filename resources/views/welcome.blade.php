@@ -6,24 +6,10 @@
 
 <div class="container-fluid">
 
-
     <div class="container-fluid d-flex flex-row">
         <h1>
-            {{ __('Bienvenid@') }}
+            {{ __('Bienvenid@ a ecoModa!') }}
         </h1>
-        @if (Route::has('login'))
-        @auth
-        <p class="px-2"></p>
-        <h1 class="mb-4">
-            {{ Auth::user()->first_name }}!
-        </h1>
-        @else
-        <h1>
-            !
-        </h1>
-        @endauth
-        @endif
-
     </div>
 
     <div id="carouselExampleIndicators" class="carousel slide py-4" data-bs-ride="true">
@@ -64,8 +50,8 @@
     <div class="container-fluid d-flex flex-column bd-highlight mb-3">
 
         <div class="contain tam">
-            @foreach ($categoriesArray as $categories)
 
+            @foreach ($categoriesArray as $categories)
 
             <a href="{{route ('products', $categories['id'])}}">
                 <div class="card">
@@ -74,16 +60,13 @@
                             class="img-fluid" alt="{{$categories['name']}}">
                     </div>
                     <div class="py-4">
-                        <h4> Ropa </h4>
+                        <h4> Categoría </h4>
                         <p> {{$categories['name']}} </p>
-
                     </div>
                 </div>
             </a>
 
-
             @endforeach
-
 
         </div>
     </div>
