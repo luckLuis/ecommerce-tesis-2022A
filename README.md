@@ -11,3 +11,9 @@ Para la ejecución del proyecto se seguir los siguientes pasos:
 ```
 git clone <url> 
 ```
+
+3 - Luego con el siguiente comando ingresamos a la carpeta generada
+```
+cd eCommerce
+```
+## Instalación del proyecto
