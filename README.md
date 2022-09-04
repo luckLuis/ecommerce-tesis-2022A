@@ -17,3 +17,8 @@ git clone <url>
 cd eCommerce
 ```
 ## Instalación del proyecto
+
+Para que el proyecto funcione de manera correcta es necesario instalar todas las dependencias necesarias, por lo tanto ingresaremos el siguiente comando:
+```
+npm install
+```
