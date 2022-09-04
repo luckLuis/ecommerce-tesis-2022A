@@ -19,7 +19,7 @@ Para la ejecución del proyecto se seguir los siguientes pasos:
 
 2 - A continuación, abrir una la línea de comandos para ingresar el comando con la URL que se ha copiado anteriormente:
 ```
-git clone <url> 
+git clone --branch sprint3 <url> 
 ```
 
 3 - Luego con el siguiente comando ingresamos a la carpeta generada
