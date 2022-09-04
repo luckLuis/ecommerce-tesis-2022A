@@ -1,5 +1,5 @@
 
-## Descarga del proyecto
+## - Descarga del proyecto
 
 Para la ejecución del proyecto se seguir los siguientes pasos: 
 
@@ -16,9 +16,14 @@ git clone <url>
 ```
 cd eCommerce
 ```
-## Instalación del proyecto
+## - Instalación del proyecto
 
 Para que el proyecto funcione de manera correcta es necesario instalar todas las dependencias necesarias, por lo tanto ingresaremos el siguiente comando:
 ```
 npm install
 ```
+Cuando la instalación se complete y teniendo todo lo necesario para ejecutar un proyecto de Laravel, ejecutamos el servidor de desarrollo con el comando:
+```
+php artisan serve
+```
+
