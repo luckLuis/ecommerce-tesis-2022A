@@ -1,4 +1,14 @@
 
+##### Instalación del componente Front-end
+
+### Herramientas requeridas
+
+- XAMPP
+- Node JS
+- Composer
+- Laravel
+- Git
+
 ## - Descarga del proyecto
 
 Para la ejecución del proyecto se seguir los siguientes pasos: 
